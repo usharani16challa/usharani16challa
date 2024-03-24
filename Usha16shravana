@@ -1,0 +1,42 @@
+/*
+Time complexity:O(N)
+space complexity:O(1)
+where 'N' is the number of people at the party.
+*/
+int findcelebrity(int n) {
+   //Two pointers pointing at start and end of search space .
+  int p=0,q=n-1;
+   //Finding celebrity.
+   while(p<q){
+      if(knows(p,q){
+         // This means p cannot be celebrity.
+         else{
+            //This means q cannot be celebrity.
+            q--;
+            }
+         }
+         int celebrity=p;
+         bool knowAny=false,knownToAll=true;
+         //verify whether the celebrity knows any other person .
+         for (int i=0;i<n;i++){
+            if(knows(celebrity,i)){
+               knowAny=true;
+               break;
+               }
+            }
+         //verify whether the celebrity is known to all the other person.
+         for(int i =0;i<n;i++){
+            if(i !=celebrity and !knows(i, celebrity)){
+               knownToAll=false;
+               break;
+               }
+            }
+         if(knowAny or !knownToAll){
+            //if verification failed then it means there is no celebrity at the party .
+            celebrity=-1;
+            }
+         return celebrity;
+         }
+         
+   
+   
